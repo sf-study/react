@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+
+    <div id="example2"></div>
+    
+    <script type="text/babel">
+        {/*React.createClass 方法用于生成一个组件类 HelloMessage。*/}
+        var HelloMessage = React.createClass({
+            render: function() {
+                return <h1>Hello World！{this.props.name}</h1>;
+            }
+        });
+
+        {/* 
+            <HelloMessage /> 实例组件类并输出信息。 
+            注意，在添加属性时， class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。
+        */}
+        ReactDOM.render(
+            <HelloMessage name="Runoob" />,
+            document.getElementById('example')
+        );
+
+
+        var WebSite = React.createClass({
+            render: function() {
+                return (
+                    <div>
+                        <Name name={this.props.name} />
+                        <Link site={this.props.site} />
+                    </div>
+                );
+            }
+        });
+         
+        var Name = React.createClass({
+            render: function() {
+                return (
+                    <h1>{this.props.name}</h1>
+                );
+            }
+        });
+         
+        var Link = React.createClass({
+            render: function() {
+                return (
+                    <a href={this.props.site}>
+                        {this.props.site}
+                    </a>
+                );
+            }
+        });
+         
+        ReactDOM.render(
+            <WebSite name="菜鸟教程" site=" http://www.runoob.com" />,
+            document.getElementById('example2')
+        );
+    </script>
+  </body>
+</html>

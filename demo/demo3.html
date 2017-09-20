@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example2"></div>
+    <script type="text/babel">
+        ReactDOM.render(
+        	<div>
+        	  <h1>{1+1}</h1>
+            </div>
+        	,
+        	document.getElementById('example')
+        );
+
+        var i = 1;
+        ReactDOM.render(
+            <div>
+              <h1>{i == 1 ? 'True!' : 'False'}</h1>
+              {/*注释...*/}
+            </div>
+            ,
+            document.getElementById('example2')
+        );
+    </script>
+
+    <div id="example3"></div>
+    <div id="example4"></div>
+    <div id="example5"></div>
+    <div id="example6"></div>
+    <script type="text/babel">
+        var myStyle = {
+            fontSize: 16,
+            color: '#2e81d4'
+        };
+        ReactDOM.render(
+            <h1 style = {myStyle}>React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px 。以下实例演示了为 h1 元素添加 myStyle 内联样式：</h1>,
+            document.getElementById('example3')
+        );
+
+        var arr = [
+            <h1>菜鸟教程</h1>,
+            <h2>学的不仅是技术，更是梦想！</h2>,
+        ];
+
+        ReactDOM.render(
+            <div>{arr}</div>,
+            document.getElementById('example4')
+        );
+
+        var myDivElement = <div className="foo">要渲染 HTML 标签，只需在 JSX 里使用小写字母的标签名。</div>;
+        ReactDOM.render(myDivElement, document.getElementById('example5'));
+
+    </script>
+  </body>
+</html>
